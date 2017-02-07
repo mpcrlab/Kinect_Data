@@ -1,0 +1,5 @@
+C:\Users\MPCR\Desktop\3DCameraTeam\Kinect_Data\Kinect_Data\bin\Debug\Kinect_Data.dll
+C:\Users\MPCR\Desktop\3DCameraTeam\Kinect_Data\Kinect_Data\bin\Debug\Kinect_Data.pdb
+C:\Users\MPCR\Desktop\3DCameraTeam\Kinect_Data\Kinect_Data\obj\Debug\Kinect_Data.csprojResolveAssemblyReference.cache
+C:\Users\MPCR\Desktop\3DCameraTeam\Kinect_Data\Kinect_Data\obj\Debug\Kinect_Data.dll
+C:\Users\MPCR\Desktop\3DCameraTeam\Kinect_Data\Kinect_Data\obj\Debug\Kinect_Data.pdb
