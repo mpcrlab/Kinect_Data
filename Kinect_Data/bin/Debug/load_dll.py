@@ -1,3 +1,6 @@
 import ctypes
 a = ctypes.cdll.LoadLibrary("Kinect_Data.dll")
-print a.add(3, 5)
+print a.init()
+print a.start()
+print a.getCurrentFrame()
+print a.stop()
