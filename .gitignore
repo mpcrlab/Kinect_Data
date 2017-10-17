@@ -1,0 +1,4 @@
+*.pyc
+*.sln
+__pycache__/*
+.vs/*
