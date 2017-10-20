@@ -1,4 +1,4 @@
 *.pyc
 *.sln
 __pycache__/*
-.vs/*
+.vs/*git
