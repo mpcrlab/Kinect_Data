@@ -4,6 +4,8 @@ from pykinect2 import PyKinectRuntime
 from pygame.locals import *
 #from face_detection import face_detection
 from deep_face_detection import detect
+#Testing embed_image
+from embed_image import *
 
 import ctypes
 import _ctypes
@@ -12,6 +14,7 @@ import sys
 import os
 import time
 import numpy as np
+from PIL import Image
 
 from math import tanh, atan, pi, isnan
 
@@ -207,11 +210,19 @@ class BodyGameRuntime(object):
             if self._kinect.has_new_color_frame():
                 frame = self._kinect.get_last_color_frame()
                 bb, pts=detect(frame)
-                
+                if len(pts) > 1:
+                    print ("Hurray!")
                 self.draw_color_frame(frame, self._frame_surface)
-                frame = None
 
                 if len(bb) > 0:
+                    shaped_frame = np.reshape(frame, [1080, 1920, 4])[:, :, :3]
+                    x1, y1, w, l = int(bb[0][0]), int(bb[0][1]), int(bb[1][0]), int(bb[1][1])
+                    shaped_frame = shaped_frame[max(0, min(1920, y1)):max(0, min(1920, y1+l)), max(0, min(1080, x1)):max(0, min(1920, x1+w)), :]
+                    print(x1, y1, w, l)
+                    print(shaped_frame.shape)
+                    shaped_frame = Image.fromarray(shaped_frame)
+                    embedding = imgemb.embed(shaped_frame)
+                    print(embedding)
                     pygame.draw.rect(self._frame_surface, (0, 255, 0), tuple(bb), 2)
 
             # --- Cool! We have a body frame, so can get skeletons
